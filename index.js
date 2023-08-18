@@ -6,11 +6,15 @@ import QuestionRoutes from "./routes/Questions.js";
 import dotenv from "dotenv";
 import answerRoute from "./routes/Answers.js"
 const app = express();
+
+app.use(cors({
+  origin: 'https://64de612eb448f8007c58b810--classy-seahorse-eb1716.netlify.app/', // Replace with your frontend URL
+  credentials: true, // Enable sending cookies and other credentials
+}));
+
 dotenv.config();
 
-
 app.use(express.json());  //using that we can recieve json data
-app.use(cors());
 
 app.use("/user",userRoutes)  //whenever we use app.use with routes then this is middleware
 app.use("/questions",QuestionRoutes)
