@@ -7,10 +7,7 @@ import dotenv from "dotenv";
 import answerRoute from "./routes/Answers.js"
 const app = express();
 
-app.use(cors({
-  origin: 'https://64dee2a4cb8a52007d81c746--rococo-shortbread-b26937.netlify.app/', // Replace with your frontend URL
-  credentials: true, // Enable sending cookies and other credentials
-}));
+app.use(cors());
 
 dotenv.config();
 
